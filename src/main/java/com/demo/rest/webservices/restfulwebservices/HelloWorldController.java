@@ -9,7 +9,7 @@ public class HelloWorldController {
 
 	@GetMapping(path = "/hello-world")
 	public String helloWorld() {
-		return "Demo Fargate Pipeline";
+		return "Demo for AWS Fargate Pipeline";
 	}
 
 	@GetMapping(path = "/hello-world-bean")
