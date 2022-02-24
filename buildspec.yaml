@@ -7,11 +7,11 @@ phases:
     commands:
     - echo Logging in to Amazon ECR...
     - aws --version
-    - aws ecr get-login-password --region $Sec.AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 956559775484.dkr.ecr.us-east-1.amazonaws.com
+    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 956559775484.dkr.ecr.us-east-1.amazonaws.com
     - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
-    - IMAGE_URI=${Sec.REPOSITORY_URI}:${TAG}
-    - echo $Sec.AWS_DEFAULT_REGION
-    - echo $Sec.REPOSITORY_URI
+    - IMAGE_URI=${REPOSITORY_URI}:${TAG}
+    - echo $AWS_DEFAULT_REGION
+    - echo $REPOSITORY_URI
     
   build:
     commands:
